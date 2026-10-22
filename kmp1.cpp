@@ -1,6 +1,6 @@
-#include<iostream> 
-#include<vector> 
-using namespace std;  
+#include <iostream>
+#include <vector>
+using namespace std;
 
 vector<int> LPS(string s) {
     int n = s.size();
@@ -24,36 +24,31 @@ vector<int> LPS(string s) {
     return lps;
 }
 
-void kmp(string text,string pattern){
-    int n=text.length();
-    int m=pattern.length(); 
-    int i=0; 
-    int j=0; 
-    while(i<n){
-        if(text[i]==pattern[j]){
-            i++; 
-            j++; 
+void kmp(string text, string pattern) {
+    int n = text.length();
+    int m = pattern.length();
+    int i = 0;
+    int j = 0;
+    while (i < n) {
+        if (text[i] == pattern[j]) {
+            i++;
+            j++;
         }
-        if(i==m){// pattern printing
-            cout<<i-j;  
-        }        
-        else if(i<n&& text[i]!=pattern[j]){
-            if(j!=0){ 
-                j=LPS(text)[j-1];             
-            }else{
-                i++; 
+        if (i == m) { // pattern printing
+            cout << i - j;
+        } else if (i < n && text[i] != pattern[j]) {
+            if (j != 0) {
+                j = LPS(text)[j - 1];
+            } else {
+                i++;
             }
-
-
         }
-
     }
-
 }
-int main(){
-    string text="angad kumar maurya"; 
-    string pattern="urya"; 
+int main() {
+    string text = "angad kumar maurya";
+    string pattern = "urya";
 
-    kmp(text, pattern); 
+    kmp(text, pattern);
     return 0;
 }

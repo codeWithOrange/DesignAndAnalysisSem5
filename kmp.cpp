@@ -1,6 +1,6 @@
-#include<iostream> 
-#include<vector> 
-using namespace std; 
+#include <iostream>
+#include <vector>
+using namespace std;
 vector<int> LPS(string s) {
     int n = s.size();
     vector<int> lps(n, 0);
@@ -21,13 +21,12 @@ vector<int> LPS(string s) {
     }
 
     return lps;
-}int main(){
-    string text="angad kumar maurya"; 
-    string pattern="urya"; 
-    vector<int> lps_array=LPS(text); 
-    for(int value:lps_array)cout<<value<<" "; 
-
-
-
-    return 0; 
+}
+int main() {
+    string text = "angad kumar maurya";
+    string pattern = "urya";
+    vector<int> lps_array = LPS(text);
+    for (int value : lps_array)
+        cout << value << " ";
+    return 0;
 }
